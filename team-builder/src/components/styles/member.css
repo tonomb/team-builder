@@ -1,0 +1,16 @@
+.member{
+    font-size: 3.5rem;
+    color: #191970;
+    background-color:#faf0e6 ;
+    padding: 8px;
+    margin: 8px;
+}
+
+.member h2{
+    margin: 16px;
+}
+
+.member span{
+    text-decoration: underline;
+    font-size: 2rem;
+}

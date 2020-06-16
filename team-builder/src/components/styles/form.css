@@ -1,0 +1,36 @@
+
+.members-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 16px;
+}
+
+.members-form label{
+    color: #faf0e6;
+    font-size: 2.5rem;
+    padding: 8px;
+    margin: 0 16px;
+}
+
+.members-form input, select{
+    margin: 0 16px;
+}
+
+.members-form button{
+    margin: 8px 0;
+    font-size: 2.5rem;
+    background-color: #faf0e6;
+    border:none;
+    box-shadow: 4px 4px 1px #e6dcd3;
+    padding: 8px;
+}
+
+.members-form button:hover{
+    position: relative;
+    top: 3px;
+    left: 3px;
+    box-shadow: none;
+}
+

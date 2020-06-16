@@ -1,24 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState }from 'react';
 import './App.css';
 
+import MembersList from './components/membersList';
+import MembersForm from './components/membersForm';
+
+
+const membersDb = [{
+    name:'Antonio',
+    gitHub: 'tonomb',
+    email: 'tono.mtzb@gmail.com',
+    role: 'Front End'
+  }
+]
+
+
+
 function App() {
+
+  const [membersList, setMembersList] = useState(membersDb);
+  const [newFormValues, setNewFormValues] = useState({}) 
+
+  function handleSubmit(e){
+
+    e.preventDefault() 
+    setMembersList( memberList => [...membersList, newFormValues])  
+  }
+
+  function handleChange(e){
+    setNewFormValues({
+      ...newFormValues,
+      [e.target.name]: e.target.value
+    })
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='app-container'>
+      <MembersForm handleChange={handleChange} handleSubmit={handleSubmit} newFormValues={newFormValues}/>
+      <MembersList membersList={membersList} />
     </div>
   );
 }
