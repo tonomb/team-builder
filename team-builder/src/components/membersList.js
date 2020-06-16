@@ -4,14 +4,14 @@ import '../App.css'
 
 
 function MembersList(props){
-    const {membersList} = props
+    const {membersList, setEditMember} = props
 
     return(
         <div className='container'>
             {
                 membersList.map(member =>{
                    return( 
-                    <Member member={member}/>
+                    <Member key={member.email} member={member} setEditMember={setEditMember}/>
                     )
                 })
             }

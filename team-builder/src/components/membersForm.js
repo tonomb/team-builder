@@ -19,6 +19,7 @@ function MemberForm(props) {
           name='name'
           value={newFormValues.name}
           onChange={handleChange}
+          required
           ></input>
         </label>
         <label>Github Handle:
@@ -27,22 +28,26 @@ function MemberForm(props) {
           name='gitHub'
           value={newFormValues.gitHub}
           onChange={handleChange}
+          required
           ></input>
         </label>
         <label> Email:
-          <input type="text" 
+          <input type="email" 
           placeholder="Email"
           name='email'
           value={newFormValues.email}
-          onChange={handleChange}></input>
+          onChange={handleChange}
+          required
+          ></input>
         </label>
         <label> Role:
           <select
             name='role'
             value={newFormValues.role}
             onChange={handleChange}
+            required
           >
-              <option>--- select project role ---</option>
+              <option value=''>--- select project role ---</option>
               <option value='front-end engineer'>Front End</option>
               <option value='back-end engineer'>Back End</option>
               <option value='designer'>Design</option>
